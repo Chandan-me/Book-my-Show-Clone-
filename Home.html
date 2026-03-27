@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>BookMyShow-Clone</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="top-strip">
+			<p>It All Starts Here!</p>
+			<div class="strip-links">
+				<a href="#">ListYourShow</a>
+				<a href="#">Corporates</a>
+				<a href="#">Offers</a>
+				<a href="#">Gift Cards</a>
+			</div>
+		</div>
+
+		<div class="nav-main">
+			<div class="brand-wrap">
+				<div class="brand-badge">BmS</div>
+				<h1>BookmyShow</h1>
+			</div>
+
+			<label class="search-box" for="movieSearch">
+				<span class="search-icon">&#128269;</span>
+				<input id="movieSearch" type="text" placeholder="Search for Movies, Events, Plays, Sports and Activities">
+			</label>
+
+			<div class="nav-actions">
+				<button class="location-btn" type="button">Mumbai</button>
+				<button class="signin-btn" type="button">Sign in</button>
+				<label class="menu-btn" for="navToggle" aria-label="Toggle menu">&#9776;</label>
+			</div>
+		</div>
+
+		<input class="nav-toggle" type="checkbox" id="navToggle" aria-label="Toggle navigation">
+
+		<nav class="nav-links">
+			<div class="left-links">
+				<a href="#">Movies</a>
+				<a href="#">Stream</a>
+				<a href="#">Events</a>
+				<a href="#">Plays</a>
+				<a href="#">Sports</a>
+				<a href="#">Activities</a>
+			</div>
+			<div class="right-links">
+				<a href="#">ListYourShow</a>
+				<a href="#">Corporates</a>
+				<a href="#">Offers</a>
+				<a href="#">Gift Cards</a>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<section class="hero-section">
+			<div class="hero-track">
+				<article class="hero-card banner-a">
+					<div class="hero-content">
+						<p class="tag">Now Streaming</p>
+						<h2>Cinema Days Are Back</h2>
+						<p>Book tickets for the latest blockbusters, live events, and fan favorites.</p>
+						<button type="button">Book Now</button>
+					</div>
+				</article>
+				<article class="hero-card banner-b">
+					<div class="hero-content">
+						<p class="tag">Early Access</p>
+						<h2>Weekend Premieres</h2>
+						<p>Unlock premiere seats before everyone else and enjoy exclusive combos.</p>
+						<button type="button">Grab Seats</button>
+					</div>
+				</article>
+				<article class="hero-card banner-c">
+					<div class="hero-content">
+						<p class="tag">Live Events</p>
+						<h2>Music, Comedy, and More</h2>
+						<p>Discover trending city events and reserve your spot instantly.</p>
+						<button type="button">Explore Events</button>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<div class="section-head">
+				<h3>Recommended Movies</h3>
+				<a href="#">See All</a>
+			</div>
+			<div class="card-grid movies-grid">
+				<article class="movie-card">
+					<img src="https://picsum.photos/id/1067/400/600" alt="Movie poster 1">
+					<h4>Skyline Run</h4>
+					<p>Action/Thriller</p>
+					<span>8.7/10</span>
+				</article>
+				<article class="movie-card">
+					<img src="https://picsum.photos/id/1005/400/600" alt="Movie poster 2">
+					<h4>The Last Note</h4>
+					<p>Drama/Musical</p>
+					<span>8.4/10</span>
+				</article>
+				<article class="movie-card">
+					<img src="https://picsum.photos/id/1011/400/600" alt="Movie poster 3">
+					<h4>Vault 27</h4>
+					<p>Mystery/Sci-Fi</p>
+					<span>8.9/10</span>
+				</article>
+				<article class="movie-card">
+					<img src="https://picsum.photos/id/1027/400/600" alt="Movie poster 4">
+					<h4>Monsoon Hearts</h4>
+					<p>Romance</p>
+					<span>8.1/10</span>
+				</article>
+				<article class="movie-card">
+					<img src="https://picsum.photos/id/1037/400/600" alt="Movie poster 5">
+					<h4>Quantum Street</h4>
+					<p>Adventure/Fantasy</p>
+					<span>8.5/10</span>
+				</article>
+				<article class="movie-card">
+					<img src="https://picsum.photos/id/1043/400/600" alt="Movie poster 6">
+					<h4>Echoes of Earth</h4>
+					<p>Documentary</p>
+					<span>8.2/10</span>
+				</article>
+			</div>
+		</section>
+
+		<section class="events-band">
+			<h3>The Best of Live Events</h3>
+			<div class="events-row">
+				<article class="event-pill">
+					<div class="event-icon">&#127917;</div>
+					<p>Comedy Shows</p>
+				</article>
+				<article class="event-pill">
+					<div class="event-icon">&#127929;</div>
+					<p>Concerts</p>
+				</article>
+				<article class="event-pill">
+					<div class="event-icon">&#127942;</div>
+					<p>Sports</p>
+				</article>
+				<article class="event-pill">
+					<div class="event-icon">&#127912;</div>
+					<p>Workshops</p>
+				</article>
+				<article class="event-pill">
+					<div class="event-icon">&#127915;</div>
+					<p>Theatre</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="premiere-section">
+			<div class="section-head">
+				<h3>Premieres</h3>
+				<a href="#">See All</a>
+			</div>
+			<p class="subtitle">Brand new releases every Friday</p>
+			<div class="card-grid premiere-grid">
+				<article class="premiere-card">
+					<img src="https://picsum.photos/id/1050/400/500" alt="Premiere 1">
+					<h4>Dark Atlas</h4>
+					<p>English</p>
+				</article>
+				<article class="premiere-card">
+					<img src="https://picsum.photos/id/1057/400/500" alt="Premiere 2">
+					<h4>Mirror Bay</h4>
+					<p>Hindi</p>
+				</article>
+				<article class="premiere-card">
+					<img src="https://picsum.photos/id/1060/400/500" alt="Premiere 3">
+					<h4>Steel Pulse</h4>
+					<p>Tamil</p>
+				</article>
+				<article class="premiere-card">
+					<img src="https://picsum.photos/id/1069/400/500" alt="Premiere 4">
+					<h4>Rising Tide</h4>
+					<p>Telugu</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="content-section">
+			<div class="section-head">
+				<h3>Outdoor Events</h3>
+				<a href="#">See All</a>
+			</div>
+			<div class="card-grid event-cards-grid">
+				<article class="event-card">
+					<img src="https://picsum.photos/id/1036/600/380" alt="Outdoor event 1">
+					<h4>Sunset Food Carnival</h4>
+					<p>Jio Gardens, Mumbai</p>
+				</article>
+				<article class="event-card">
+					<img src="https://picsum.photos/id/1048/600/380" alt="Outdoor event 2">
+					<h4>Open Air Cinema Night</h4>
+					<p>Mill Grounds, Mumbai</p>
+				</article>
+				<article class="event-card">
+					<img src="https://picsum.photos/id/1059/600/380" alt="Outdoor event 3">
+					<h4>Street Music Festival</h4>
+					<p>Marine Drive, Mumbai</p>
+				</article>
+			</div>
+		</section>
+
+		<section class="search-tags">
+			<h3>Trending Searches Right Now</h3>
+			<div class="tag-wrap">
+				<a href="#">Action Movies</a>
+				<a href="#">IPL Tickets</a>
+				<a href="#">Stand-up Comedy</a>
+				<a href="#">Couple Offers</a>
+				<a href="#">Family Shows</a>
+				<a href="#">Kids Activities</a>
+				<a href="#">Music Fest</a>
+				<a href="#">Theatre Plays</a>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="footer-brand">
+			<div class="brand-badge">bms</div>
+			<h3>bookmyshow</h3>
+		</div>
+		<p>Copyright 2026 BookMyShow Clone. Crafted for learning and portfolio use.</p>
+	</footer>
+
+</body>
+</html>
