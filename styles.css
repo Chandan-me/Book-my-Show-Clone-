@@ -161,6 +161,8 @@ a {
     color: #ffffff;
     padding: 9px 18px;
     font-weight: 700;
+    display: inline-grid;
+    place-items: center;
 }
 
 .signin-btn:hover,
@@ -179,6 +181,10 @@ a {
 }
 
 .nav-toggle {
+    display: none;
+}
+
+.signup-toggle {
     display: none;
 }
 
@@ -213,14 +219,14 @@ main {
 .hero-section {
     width: min(1240px, calc(100% - 32px));
     margin: 24px auto 22px;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
 }
 
 .hero-track {
-    overflow: hidden;
-    border-radius: var(--radius-lg);
     box-shadow: var(--shadow);
     display: flex;
-    width: 100%;
+    width: 300%;
     animation: heroSlide 15s infinite;
 }
 
@@ -233,9 +239,8 @@ main {
     padding: clamp(24px, 4vw, 44px);
     display: flex;
     align-items: flex-end;
-    border-radius: var(--radius-lg);
     position: relative;
-    flex: 0 0 100%;
+    flex: 0 0 33.3333%;
 }
 
 .hero-card::before {
@@ -511,6 +516,99 @@ main {
     margin-bottom: 8px;
 }
 
+.signup-modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    place-items: center;
+    z-index: 240;
+}
+
+.signup-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(11, 14, 26, 0.62);
+    backdrop-filter: blur(2px);
+}
+
+.signup-panel {
+    position: relative;
+    width: min(440px, calc(100% - 28px));
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 20px 40px rgba(15, 22, 44, 0.28);
+    z-index: 2;
+    animation: panelIn 220ms ease;
+}
+
+.signup-close {
+    position: absolute;
+    right: 12px;
+    top: 8px;
+    font-size: 28px;
+    line-height: 1;
+    color: #434b66;
+    cursor: pointer;
+}
+
+.signup-panel h3 {
+    margin: 0;
+    font-family: "Oswald", sans-serif;
+    font-size: 32px;
+    letter-spacing: 0.3px;
+}
+
+.signup-panel p {
+    color: var(--text-muted);
+    margin: 8px 0 16px;
+    font-size: 14px;
+}
+
+.signup-form {
+    display: grid;
+    gap: 8px;
+}
+
+.signup-form label {
+    font-weight: 700;
+    font-size: 13px;
+    margin-top: 4px;
+}
+
+.signup-form input {
+    border: 1px solid #d9dfef;
+    border-radius: 10px;
+    min-height: 44px;
+    padding: 10px 12px;
+    font: inherit;
+}
+
+.signup-form input:focus {
+    outline: 2px solid #ffd4de;
+    border-color: #f08ca4;
+}
+
+.signup-form button {
+    margin-top: 10px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #fff;
+    font: inherit;
+    font-weight: 800;
+    min-height: 46px;
+    cursor: pointer;
+}
+
+.signup-form button:hover {
+    background: var(--accent-dark);
+}
+
+.signup-toggle:checked ~ .signup-modal {
+    display: grid;
+}
+
 @keyframes heroSlide {
     0%,
     28% {
@@ -518,14 +616,25 @@ main {
     }
     33%,
     61% {
-        transform: translateX(-100%);
+        transform: translateX(-33.3333%);
     }
     66%,
     94% {
-        transform: translateX(-200%);
+        transform: translateX(-66.6666%);
     }
     100% {
         transform: translateX(0%);
+    }
+}
+
+@keyframes panelIn {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
     }
 }
 
@@ -628,6 +737,15 @@ main {
 
     .hero-content p {
         font-size: 14px;
+    }
+
+    .signup-panel {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .signup-panel h3 {
+        font-size: 28px;
     }
 
     .section-head {

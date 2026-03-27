@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyShow | Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f6f7fb;
+            --surface: #ffffff;
+            --text-main: #1c2033;
+            --text-soft: #687089;
+            --stroke: #d8deed;
+            --accent: #e72d56;
+            --accent-dark: #c71d43;
+            --dark: #161a28;
+            --radius-lg: 18px;
+            --radius-md: 12px;
+            --shadow: 0 22px 50px rgba(16, 23, 46, 0.14);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Manrope", "Segoe UI", sans-serif;
+            color: var(--text-main);
+            background:
+                radial-gradient(circle at 8% 12%, rgba(231, 45, 86, 0.14), transparent 36%),
+                radial-gradient(circle at 92% 8%, rgba(66, 109, 255, 0.14), transparent 30%),
+                linear-gradient(180deg, #f8f9ff, var(--bg));
+            overflow-x: hidden;
+        }
+
+        .topbar {
+            background: var(--dark);
+            color: #f2f4ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            padding: 12px clamp(16px, 5vw, 56px);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .badge {
+            width: 36px;
+            height: 36px;
+            border-radius: 999px;
+            display: grid;
+            place-items: center;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 13px;
+            background: linear-gradient(135deg, #f12754, #be1a3f);
+        }
+
+        .brand h1 {
+            margin: 0;
+            color: #ffffff;
+            font-family: "Oswald", sans-serif;
+            letter-spacing: 0.4px;
+            font-weight: 600;
+            text-transform: lowercase;
+            font-size: clamp(28px, 4vw, 40px);
+            line-height: 1;
+        }
+
+        .back-link {
+            color: #dbe1f8;
+            font-weight: 700;
+            text-decoration: none;
+            border: 1px solid #404965;
+            border-radius: 999px;
+            padding: 8px 14px;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+            border-color: #596386;
+        }
+
+        .wrap {
+            width: min(1100px, calc(100% - 28px));
+            margin: clamp(20px, 4vw, 40px) auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--surface);
+            box-shadow: var(--shadow);
+            border: 1px solid #e4e8f5;
+        }
+
+        .promo {
+            padding: clamp(22px, 4vw, 44px);
+            background:
+                linear-gradient(155deg, rgba(17, 25, 54, 0.86), rgba(17, 25, 54, 0.58)),
+                url("https://picsum.photos/id/1040/900/1100") center/cover;
+            color: #f7f8ff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            min-height: 580px;
+        }
+
+        .promo .pill {
+            margin: 0 0 10px;
+            display: inline-block;
+            width: fit-content;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 999px;
+            padding: 4px 10px;
+            font-size: 12px;
+            letter-spacing: 0.25px;
+            background: rgba(255, 255, 255, 0.14);
+        }
+
+        .promo h2 {
+            margin: 0;
+            font-family: "Oswald", sans-serif;
+            font-size: clamp(34px, 5vw, 52px);
+            line-height: 1.02;
+            letter-spacing: 0.4px;
+        }
+
+        .promo p {
+            margin: 12px 0 0;
+            color: #e8ecff;
+            max-width: 430px;
+        }
+
+        .form-panel {
+            padding: clamp(20px, 4vw, 40px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-panel h3 {
+            margin: 0;
+            font-family: "Oswald", sans-serif;
+            font-size: clamp(30px, 4vw, 42px);
+            line-height: 1;
+            letter-spacing: 0.3px;
+        }
+
+        .subtext {
+            margin: 9px 0 18px;
+            color: var(--text-soft);
+            font-size: 14px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .field.full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        input {
+            width: 100%;
+            min-height: 44px;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--stroke);
+            padding: 10px 12px;
+            font: inherit;
+            background: #ffffff;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        input:focus {
+            border-color: #f08ca4;
+            box-shadow: 0 0 0 3px rgba(231, 45, 86, 0.14);
+        }
+
+        .terms {
+            margin-top: 2px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            color: var(--text-soft);
+            font-size: 13px;
+        }
+
+        .terms input {
+            width: 18px;
+            min-height: 18px;
+            margin-top: 2px;
+        }
+
+        .terms a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .terms a:hover {
+            text-decoration: underline;
+        }
+
+        .submit-btn {
+            border: 0;
+            border-radius: 999px;
+            min-height: 48px;
+            margin-top: 14px;
+            background: linear-gradient(120deg, var(--accent), #ff5b79);
+            color: #ffffff;
+            font: inherit;
+            font-weight: 800;
+            letter-spacing: 0.2px;
+            cursor: pointer;
+            box-shadow: 0 10px 24px rgba(231, 45, 86, 0.3);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 14px 30px rgba(231, 45, 86, 0.34);
+        }
+
+        .signin-note {
+            margin: 14px 0 0;
+            text-align: center;
+            color: var(--text-soft);
+            font-size: 14px;
+        }
+
+        .signin-note a {
+            color: var(--accent);
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .signin-note a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 920px) {
+            .wrap {
+                grid-template-columns: 1fr;
+            }
+
+            .promo {
+                min-height: 300px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .topbar {
+                flex-wrap: wrap;
+            }
+
+            .back-link {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="topbar">
+        <div class="brand">
+            <div class="badge">bms</div>
+            <h1>bookmyshow</h1>
+        </div>
+        <a class="back-link" href="Home.html">Back to Home</a>
+    </header>
+
+    <main class="wrap">
+        <section class="promo">
+            <p class="pill">Welcome Offer</p>
+            <h2>Sign Up and Unlock First Booking Rewards</h2>
+            <p>Create your account to book movies, events, and sports with personalized recommendations.</p>
+        </section>
+
+        <section class="form-panel">
+            <h3>Create Account</h3>
+            <p class="subtext">Join now and start booking in seconds.</p>
+
+            <form class="form-grid" action="#" method="post">
+                <div class="field">
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" name="firstName" type="text" placeholder="Enter first name" required>
+                </div>
+
+                <div class="field">
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" name="lastName" type="text" placeholder="Enter last name" required>
+                </div>
+
+                <div class="field full">
+                    <label for="email">Email Address</label>
+                    <input id="email" name="email" type="email" placeholder="you@example.com" required>
+                </div>
+
+                <div class="field full">
+                    <label for="phone">Phone Number</label>
+                    <input id="phone" name="phone" type="tel" placeholder="Enter 10-digit mobile number" required>
+                </div>
+
+                <div class="field">
+                    <label for="password">Password</label>
+                    <input id="password" name="password" type="password" placeholder="Create a password" required>
+                </div>
+
+                <div class="field">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Re-enter password" required>
+                </div>
+
+                <label class="terms field full">
+                    <input type="checkbox" required>
+                    <span>I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</span>
+                </label>
+
+                <button class="submit-btn field full" type="submit">Create My Account</button>
+            </form>
+
+            <p class="signin-note">Already have an account? <a href="Home.html">Sign in from Home</a></p>
+        </section>
+    </main>
+</body>
+</html>
